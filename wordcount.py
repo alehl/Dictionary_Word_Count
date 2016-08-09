@@ -1,16 +1,13 @@
 def word_count(file):
-	poem_file = open(file)
+	poem_file = open(file, 'r')
 
-	ives_dictionary = {}
+	wordcount = 0
 
-	for line in poem_file:
-		line = line.rstrip()
-		word_list = line.split(" ")
-			ives_dictionary[word] = ives_dictionary.get(word, 0) + 1
+	for lines in poem_file:
+		word_count1 = lines.split()
+		wordcount += len(word_count1)
+	poem_file.close()
 
-	for word, quantity in ives_dictionary.iteritems():
-		quantity = ives_dictionary[word]
-		print word, quantity
+	print str(wordcount)
 
-
-word_count("test.txt")
+word_count("alejandra.txt")
